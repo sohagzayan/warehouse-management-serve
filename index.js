@@ -11,6 +11,9 @@ const port = process.env.PORT || 5000;
 app.get("/", (req , res)=>{
     res.send("hello bangladesh")
 })
+app.get("/test", (req , res)=>{
+    res.send("deploy success you can go next step")
+})
 /*  error handle */
 
 /* listening server */
