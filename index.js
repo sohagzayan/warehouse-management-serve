@@ -4,12 +4,14 @@ const dotenv = require("dotenv");
 const bodyParser = require("body-parser");
 const inventoryRoute = require("./routes/inventoryRoute")
 const mongoConnection = require("./connection/connection")
+const cors = require("cors")
 dotenv.config();
 /* port on server */
 const port = process.env.PORT || 5000;
 /* mongoDB connection */
 mongoConnection()
 /* middleWare */
+app.use(cors())
 app.use(bodyParser.json())
 app.use('/api/todo', inventoryRoute)
 
