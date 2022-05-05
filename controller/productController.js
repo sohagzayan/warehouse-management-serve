@@ -43,7 +43,15 @@ exports.updateProduct = (req , res)=>{
 exports.deleteProduct = (req , res)=>{
     res.send("delete todo")
 }
-exports.detailsProduct= (req , res)=>{
-    res.send("todo todo")
+
+exports.detailsProduct= async (req , res)=>{
+    const id = req.params.id
+    try{
+        const details = await Product.findById(id)
+        res.send(details)
+    }
+    catch(err){
+        res.send(err)
+    }
 }
 
