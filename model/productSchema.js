@@ -13,6 +13,10 @@ const productSchema = mongoose.Schema({
         type : String,
         required : true
     } ,
+    des : {
+        type : String,
+        required : true
+    } ,
     supplier : {
         type : String,
         required : true
@@ -22,9 +26,13 @@ const productSchema = mongoose.Schema({
         required : true
     } ,
     quantity : {
-        type : String,
+        type : Number,
         required : true
     } ,
+    gmail : {
+        type : String,
+        required : true
+    },
     date : {
         type : Date,
         default : Date.now
